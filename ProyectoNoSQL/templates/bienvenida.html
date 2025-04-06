@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <title>Bienvenido a PetHome 🐶🐱</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a PetHome 🐶🐱</h1>
+    </header>
+
+    <p>Explora nuestras adorables mascotas disponibles para adopción !</p>
+
+    <div class="contenedor">
+        {% for mascota in mascotas %}
+        <div class="mascota">
+            {% if mascota['imagen'] != 'Sin imagen' %}
+                <img src="data:image/jpeg;base64,{{ mascota['imagen'] }}" alt="Imagen de {{ mascota['nombre'] }}">
+            {% else %}
+                <p>Sin imagen</p>
+            {% endif %}
+            <h3>{{ mascota['nombre'] }}</h3>
+            <p><strong>Edad:</strong> {{ mascota['edad'] }} años</p>
+            <p><strong>Sexo:</strong> {{ mascota['sexo'] }}</p>
+            <p><strong>Salud:</strong> {{ mascota['salud'] }}</p>
+            <p><strong>Comportamiento:</strong> {{ mascota['comportamiento'] }}</p>
+            <p><strong>Características:</strong> {{ mascota['caracteristicas'] }}</p>
+            <p><strong>Color:</strong> {{ mascota['color'] }}</p>
+            <p><strong>Raza:</strong> {{ mascota['raza'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

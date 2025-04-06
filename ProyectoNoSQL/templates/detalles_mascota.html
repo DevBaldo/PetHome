@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Mascota</title>
+</head>
+<body>
+    <h1>Detalles de la Mascota</h1>
+
+    <h3>Nombre: {{ mascota['nombre'] }}</h3>
+    <p>Edad: {{ mascota['edad'] }}</p>
+    <p>Sexo: {{ mascota['sexo'] }}</p>
+    <p>Estado de Salud: {{ mascota['salud'] }}</p>
+    <p>Comportamiento: {{ mascota['comportamiento'] }}</p>
+    <p>Características: {{ mascota['caracteristicas'] }}</p>
+    <p>Color: {{ mascota['color'] }}</p>
+    <p>Raza: {{ mascota['raza'] }}</p>
+
+    <!-- Mostrar la imagen si existe -->
+    <h3>Imagen:</h3>
+    {% if mascota['imagen'] != "Sin imagen" %}
+        <img src="data:image/jpeg;base64,{{ mascota['imagen'] }}" alt="Imagen de la mascota" width="500" height="500">
+    {% else %}
+        <p>No hay imagen disponible</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('editar_mascota', id=mascota['_id']) }}">Editar Mascota</a></p>
+    <p><a href="{{ url_for('eliminar_mascota', id=mascota['_id']) }}">Eliminar Mascota</a></p>
+    <p><a href="{{ url_for('index') }}">Volver a la lista</a></p>
+</body>
+</html>

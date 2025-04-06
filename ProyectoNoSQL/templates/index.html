@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <title>Lista de Mascotas</title>
+    
+</head>
+<body>
+    <h1>Lista de Mascotas</h1>
+    <a href="{{ url_for('agregar_mascota') }}">Agregar nueva mascota</a><br><br>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Estado de Salud</th>
+                <th>Comportamiento</th>
+                <th>Características</th>
+                <th>Color</th>
+                <th>Raza</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mascota in mascotas %}
+            <tr>
+                <td>{{ mascota['nombre'] }}</td>
+                <td>{{ mascota['edad'] }}</td>
+                <td>{{ mascota['sexo'] }}</td>
+                <td>{{ mascota['salud'] }}</td>
+                <td>{{ mascota['comportamiento'] }}</td>
+                <td>{{ mascota['caracteristicas'] }}</td>
+                <td>{{ mascota['color'] }}</td>
+                <td>{{ mascota['raza'] }}</td>
+                <td class="acciones">
+                    <a href="{{ url_for('editar_mascota', id=mascota['_id']) }}">Editar</a> |
+                    <a href="{{ url_for('eliminar_mascota', id=mascota['_id']) }}" onclick="return confirm('¿Estás seguro de eliminar esta mascota?')">Eliminar</a> |
+                    <a href="{{ url_for('detalles_mascota', id=mascota['_id']) }}">Detalles</a>  <!-- Aquí el enlace a detalles -->
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
