@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de la Mascota</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Lista de Mascotas</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h1>Detalles de la Mascota</h1>
-
-    <h3>Nombre: {{ mascota['nombre'] }}</h3>
-    <p>Edad: {{ mascota['edad'] }}</p>
-    <p>Sexo: {{ mascota['sexo'] }}</p>
-    <p>Estado de Salud: {{ mascota['salud'] }}</p>
-    <p>Comportamiento: {{ mascota['comportamiento'] }}</p>
-    <p>Características: {{ mascota['caracteristicas'] }}</p>
-    <p>Color: {{ mascota['color'] }}</p>
-    <p>Raza: {{ mascota['raza'] }}</p>
-
-    <!-- Mostrar la imagen si existe -->
-    <h3>Imagen:</h3>
-    {% if mascota['imagen'] != "Sin imagen" %}
-        <img src="data:image/jpeg;base64,{{ mascota['imagen'] }}" alt="Imagen de la mascota" width="500" height="500">
-    {% else %}
-        <p>No hay imagen disponible</p>
-    {% endif %}
-
-    <p><a href="{{ url_for('editar_mascota', id=mascota['_id']) }}">Editar Mascota</a></p>
-    <p><a href="{{ url_for('eliminar_mascota', id=mascota['_id']) }}">Eliminar Mascota</a></p>
-    <p><a href="{{ url_for('index') }}">Volver a la lista</a></p>
+    {% include 'navbar.html' %}
+    <div class="container mt-4">
+        <h1>Detalles de la Mascota</h1>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">{{ mascota['nombre'] }}</h3>
+                <p class="card-text"><strong>Edad:</strong> {{ mascota['edad'] }}</p>
+                <p class="card-text"><strong>Sexo:</strong> {{ mascota['sexo'] }}</p>
+                <p class="card-text"><strong>Estado de Salud:</strong> {{ mascota['salud'] }}</p>
+                <p class="card-text"><strong>Comportamiento:</strong> {{ mascota['comportamiento'] }}</p>
+                <p class="card-text"><strong>Características:</strong> {{ mascota['caracteristicas'] }}</p>
+                <p class="card-text"><strong>Color:</strong> {{ mascota['color'] }}</p>
+                <p class="card-text"><strong>Raza:</strong> {{ mascota['raza'] }}</p>
+                {% if mascota['imagen'] != "Sin imagen" %}
+                    <img src="data:image/jpeg;base64,{{ mascota['imagen'] }}" alt="Imagen de la mascota" class="img-fluid">
+                {% else %}
+                    <p>No hay imagen disponible</p>
+                {% endif %}
+                <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Volver a la lista</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
