@@ -42,3 +42,210 @@ body {
 .mascota p {
     margin: 3px 0;
 }
+
+/*Cuidados*/
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f8f8f8;
+    color: #333;
+  }
+
+  header {
+    position: relative;
+    height: 500px;
+    background-image: url('https://www.infobae.com/resizer/v2/LQ3UDPBYWVBZZNI2MV32S6NLYI.jpg?auth=7712866af85f5cd851732aaa56e33b8186360c11fbd7f557570b4c01a246e783&smart=true&width=1200&height=630&quality=85'); /*Esto puede cambiar la imagen grande que sale*/
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main-card {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .main-card h1 {
+    margin-top: 0;
+    color: #2e7d32;
+    font-size: 35px;
+  }
+
+  .main-card h2 {
+    margin: 10px 0;
+    font-weight: normal;
+    color: #666;
+    font-size: 30px;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    background: white;
+    margin-top: 80px;
+  }
+
+  .section:nth-child(even) {
+    flex-direction: row-reverse;
+    background: #f0f0f0;
+  }
+
+  .section img {
+    width: 45%;
+    border-radius: 15px;
+    margin-right: 5%;
+  }
+
+  .section:nth-child(even) img {
+    margin-left: 5%;
+    margin-right: 0;
+  }
+
+  .section-content {
+    flex: 1;
+    text-align: justify;
+    font-weight: bold;
+    font-size: 17px;
+    
+  }
+
+  .section-content h3 {
+    margin-top: 0;
+    color: #3f51b5;
+    
+  }
+
+  .section-content p {
+    line-height: 1.6;
+  }
+
+  /*Despues eso se pone unos consejos, este es el apartado*/
+  .consejos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    max-width: 1100px;
+    margin: 50px auto;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .consejo-box {
+    background-color: #cad34b; /*color de las capsulas de cuidados.html */
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+  }
+
+  .consejo-box:hover {
+    transform: translateY(-6px);
+  }
+
+  @media screen and (min-width: 1024px) {
+    .consejos-container {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  /*Soporte pág*/
+  body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #e8f5e9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #43a047;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 15px;
+}
+
+.support-card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.support-card i {
+    font-size: 3rem;
+    color: #43a047;
+    margin-bottom: 15px;
+}
+
+.support-card h2 {
+    font-size: 1.6rem;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.support-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.support-card a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #43a047;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.support-card a:hover {
+    background-color: #388e3c;
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    color: #43a047;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #2e7d32;
+}
+
+footer {
+    background-color: #0a4a9c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}

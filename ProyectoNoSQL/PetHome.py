@@ -102,5 +102,13 @@ def get_mascota(id):
     mascota['_id'] = str(mascota['_id'])
     return jsonify(mascota)
 
+@app.route('/cuidados')
+def cuidados():
+    return render_template('cuidados.html')
+
+@app.route("/soporte")
+def soporte():
+    return render_template("soporte.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
