@@ -123,5 +123,10 @@ def login():
 def register():
     return render_template('register.html')
 
+@app.route('/detalle_mascota/<id>')
+def detalle_mascota(id):
+    mascota = collection.find_one({'_id': ObjectId(id)})
+    return render_template('detalles_mascota.html', mascota=mascota)
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -15,7 +15,8 @@
         <a href="{{ url_for('login') }}">Iniciar sesión</a>
         <a href="{{ url_for('register') }}">Registrarse</a>
     </div>
-
+    <a href="{{ url_for('soporte') }}">Soporte</a>
+    <a href="{{ url_for('cuidados') }}">Cuidados</a><br>
     <p>Explora nuestras adorables mascotas disponibles para adopción !</p>
 
     <div class="contenedor">
@@ -34,6 +35,7 @@
             <p><strong>Características:</strong> {{ mascota['caracteristicas'] }}</p>
             <p><strong>Color:</strong> {{ mascota['color'] }}</p>
             <p><strong>Raza:</strong> {{ mascota['raza'] }}</p>
+            <a href="{{ url_for('detalle_mascota', id=mascota['_id']) }}">Saber más</a>
         </div>
         {% endfor %}
     </div>
