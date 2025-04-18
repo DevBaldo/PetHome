@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión - PetHome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body class="login-register-body">
+    <div class="login-register-container">
+        <form class="login-register-form" action="/login" method="POST">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+            <div class="login-link">
+                <p>¿No tienes cuenta? <a href="{{ url_for('register') }}">Regístrate</a></p>
+                
+            </div>
+        </form>
+    </div>
+</body>
+</html>

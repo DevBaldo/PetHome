@@ -8,8 +8,13 @@
 </head>
 <body>
     <header>
-        <h1>Bienvenido a PetHome 🐶🐱</h1>
+        <h1>Bienvenido a PetHome 🐶🐱</h1> 
     </header>
+    
+    <div class="auth-links">
+        <a href="{{ url_for('login') }}">Iniciar sesión</a>
+        <a href="{{ url_for('register') }}">Registrarse</a>
+    </div>
 
     <p>Explora nuestras adorables mascotas disponibles para adopción !</p>
 

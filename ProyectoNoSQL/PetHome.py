@@ -12,7 +12,7 @@ collection = db["Mascotas"]
 
 @app.route('/')
 def inicio():
-    return redirect(url_for('index'))
+    return redirect(url_for('bienvenida'))
 
 @app.route('/index')
 def index():
@@ -109,6 +109,19 @@ def cuidados():
 @app.route("/soporte")
 def soporte():
     return render_template("soporte.html")
+
+@app.route("/bienvenida")
+def bienvenida():
+    mascotas = list(collection.find())  
+    return render_template("bienvenida.html", mascotas=mascotas)  
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
